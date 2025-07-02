@@ -84,7 +84,7 @@ header{
     margin: auto;
     display: flexbox;
     flex-wrap: wrap;
-    width: 50vw;
+    width: 90vw;
     height: 70vh;
 
 }
@@ -165,7 +165,9 @@ header{
     margin-right: 20px;
     overflow-y: auto;
     padding: 30px;
-
+    display: flex;
+    flex-direction: column;
+    position: relative;
 }
 .projectCard:hover{
     color: #ffffff;
@@ -194,8 +196,33 @@ header{
 .detailsRow{
     padding-top: 20px;
     display: flex;
-    flex-flow: row-reverse;
+    justify-content: flex-end;
+    margin-top: auto;
     color: transparent;
+}
+
+#detailsText {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.projectCard:hover #detailsText,
+.projectCardLarge:hover #detailsText {
+    opacity: 1;
+}
+
+.github-label {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: rgb(128, 128, 128);
+    font-size: 14px;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+.github-label:hover {
+    color: #ffffff;
 }
 
 /* Project Detail Page Styles */
@@ -336,6 +363,9 @@ header{
     color: rgb(56, 56, 56);
     border: rgb(32, 32, 32) solid 1px;
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
 }
 .projectCardLarge:hover{
     color: #ffffff;
