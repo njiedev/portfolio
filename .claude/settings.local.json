@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git filter-branch:*)",
+      "Bash(git stash:*)",
+      "Bash(set \"FILTER_BRANCH_SQUELCH_WARNING=1\")",
+      "Bash(git rev-list:*)",
+      "Bash(findstr:*)",
+      "Bash(git reflog expire:*)",
+      "Bash(git gc:*)"
+    ]
+  }
+}
