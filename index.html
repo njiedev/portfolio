@@ -6,167 +6,61 @@
     <title>Mohammed Njie</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <canvas id="particles"></canvas>
-    <div class="container">
+<body class="wallpaper-page">
+    <button id="invertToggle" class="invert-toggle" aria-label="invert colors">invert</button>
+    <main class="wallpaper-rail">
 
-        <div class="hero">
-            <h1>mohammed njie</h1>
-            <p class="tagline">cs & ai at uno ~ proj 2028.</p>
-        </div>
-
-        <nav class="navbar">
-            <div class="nav-links">
-                <a href="blog.html">blog</a>
-                <a href="reading-list.html">reading list</a>
-                <a href="contact.html">contact</a>
-            </div>
-            <div class="nav-socials">
-                <a href="https://github.com/njiedev" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/mohammed-njie-619795326/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="https://x.com/njiedev" target="_blank" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="images/resume.pdf" target="_blank" aria-label="Resume"><i class="fa-solid fa-file"></i></a>
-            </div>
-        </nav>
-
-        <section class="section" id="about">
-            <h2>about</h2>
-            <p>I'm Mohammed Njie, a computer science & artificial intelligence student at the University of Nebraska Omaha. I love building things that give me a creative output and solve real problems. When I'm not coding, you'll find me at the gym, reading fiction(trying to get into nonfiction), playing games, skating, or basketball. I hope to be able to work for riot games one day!</p>
+        <section class="vstack">
+            <h2 class="ws-title">me</h2>
+            <p class="ws-line">uno '28 — cs &amp; ai</p>
+            <a class="ws-line" href="https://github.com/njiedev" target="_blank">github</a>
+            <a class="ws-line" href="https://www.linkedin.com/in/mohammed-njie-619795326/" target="_blank">linkedin</a>
+            <a class="ws-line" href="https://x.com/3weeksbuilding" target="_blank">twitter</a>
+            <a class="ws-line" href="images/resume.pdf" target="_blank">resume</a>
         </section>
 
-        <hr class="divider">
-
-        <section class="section" id="experience">
-            <h2>experience</h2>
-
-            <div class="experience-item">
-                <div class="exp-header">
-                    
-                    <div class="exp-title-group">
-                        <img src="images/fnbo_logo.jpeg" alt="FNBO logo" class="exp-logo">
-                        <span class="exp-role">Incoming Technology Intern </span>
-                    </div>
-                    <span class="exp-date">jun 2026 – aug 2026</span>
-                </div>
-                <p class="exp-org">First National Bank of Omaha</p>
-                <p></p>
-            </div>
-
-            <div class="experience-item">
-                <div class="exp-header">
-                    <div class="exp-title-group">
-                        <div class="exp-logo-fade" aria-label="LANL and UNO logos">
-                            <img src="images/lanl.jpeg" alt="LANL logo" class="exp-logo exp-logo-fade__img exp-logo-fade__img--a">
-                            <img src="images/unomaha_logo.jpeg" alt="UNO logo" class="exp-logo exp-logo-fade__img exp-logo-fade__img--b">
-                        </div>
-                        <span class="exp-role">Software Engineer Intern</span>
-                    </div>
-                    <span class="exp-date">jun 2025 – aug 2025</span>
-                </div>
-                <p class="exp-org">Los Alamos National Laboratory x University of Nebraska at Omaha</p>
-                <ul class="exp-bullets">
-                    <li>Developed a Flask web application with a real-time damage confirmation interface, streamlining the manual verification process for nuclear safety compliance requirements</li>
-                    <li>Designed and implemented a PostgreSQL database schema with automated image routing logic, directing damage-positive classifications to priority review queues for quality assurance workflows</li>
-                    <li>Built front-end review interface using HTML and CSS, enabling efficient manual confirmation of flagged nuclear waste barrel images</li>
-                    <li>Researched and explored YOLO object detection models to understand classification pipelines for potential integration with the damage detection workflow</li>
-                </ul>
-            </div>
-
-            <div class="experience-item">
-                <div class="exp-header">
-                    <div class="exp-title-group">
-                        <img src="images/unomaha_logo.jpeg" alt="UNO logo" class="exp-logo">
-                        <span class="exp-role">Lead IT Consultant — CBA Operations</span>
-                    </div>
-                    <span class="exp-date">jan 2025 – present</span>
-                </div>
-                <p class="exp-org">University of Nebraska at Omaha</p>
-                <ul class="exp-bullets">
-                    <li>Providing frontline technical support to students and faculty</li>
-                    <li>Designing and conducting training sessions for student workers on classroom and teaching-related technologies</li>
-                    <li>Supervising a team of student workers within CBA Operations</li>
-                </ul>
-            </div>
-
-            <div class="experience-item">
-                <div class="exp-header">
-                    <div class="exp-title-group">
-                        <img src="images/unomaha_logo.jpeg" alt="UNO logo" class="exp-logo">
-                        <span class="exp-role">IS&T Grader</span>
-                    </div>
-                    <span class="exp-date">jan 2025 – present</span>
-                </div>
-                <p class="exp-org">University of Nebraska at Omaha</p>
-                <ul class="exp-bullets">
-                    <li>Evaluating student programming assignments using standardized rubrics and providing technical feedback</li>
-                    <li>Managing high-volume assessment workflows while meeting strict deadlines</li>
-                </ul>
-            </div>
-
-            <div class="experience-item">
-                <div class="exp-header">
-                    <div class="exp-title-group">
-                        <img src="images/unomaha_logo.jpeg" alt="UNO logo" class="exp-logo">
-                        <span class="exp-role">Cybersecurity Research Intern</span>
-                    </div>
-                    <span class="exp-date">jun 2022 – jul 2022</span>
-                </div>
-                <p class="exp-org">University of Nebraska at Omaha</p>
-                <ul class="exp-bullets">
-                    <li>Researched internet patterns in K-6 students and cybersecurity vulnerabilities on children's websites</li>
-                    <li>Created an informative presentation tailored towards children highlighting the dangers of the internet</li>
-                </ul>
-            </div>
+        <section class="vstack">
+            <h2 class="ws-title">more</h2>
+            <a class="ws-line" href="blog.html">blog</a>
+            <a class="ws-line" href="reading-list.html">reading list</a>
+            <a class="ws-line" href="idea-board.html">idea board</a>
         </section>
 
-        <hr class="divider">
-
-        <section class="section" id="skills">
-            <h2>skills</h2>
-            <div class="skills-container">
-                <button class="skill-bubble" data-category="language">python</button>
-                <button class="skill-bubble" data-category="language">javascript</button>
-                <button class="skill-bubble" data-category="language">html/css</button>
-                <button class="skill-bubble" data-category="framework">react</button>
-                <button class="skill-bubble" data-category="tool">firebase/supabase</button>
-                <button class="skill-bubble" data-category="tool">git</button>
-                <button class="skill-bubble" data-category="tool">figma</button>
-                <button class="skill-bubble" data-category="tool">mysql</button>
-                <button class="skill-bubble" data-category="tool">postgresql</button>
-            </div>
+        <section class="vstack">
+            <h2 class="ws-title">about</h2>
+            <p class="ws-line">building things, lifting, reading fiction, basketball, travel.</p>
+            <p class="ws-line"></p>
         </section>
 
-        <hr class="divider">
-
-        <section class="section" id="projects">
-            <h2>projects</h2>
-
-            <div class="project">
-                <div class="project-header">
-                    <h3>Inventory Management System</h3>
-                </div>
-                <p class="exp-org">Blueprints for Pangaea Omaha</p>
-                <ul class="exp-bullets">
-                    <li>Worked with a medical supply donation nonprofit to build an inventory management system for tracking <strong>2,000+ units</strong> of medical inventory</li>
-                    <li>Replaced their manual spreadsheet workflow with a searchable dashboard featuring real-time updates, role-based access, and streamlined item tracking</li>
-                    <li>Helped volunteers spend less time on data entry and more time on their mission</li>
-                </ul>
-                <div class="project-footer">
-                    <div class="project-tags">
-                        <span class="tag">react</span>
-                        <span class="tag">typescript</span>
-                        <span class="tag">supabase</span>
-                        <span class="tag">tailwind css</span>
-                        <span class="tag">vite</span>
-                    </div>
-                    <a href="https://github.com/njiedev/b4pdatabase" target="_blank" class="project-link">view on github →</a>
-                </div>
-            </div>
+        <section class="vstack">
+            <h2 class="ws-title">experience</h2>
+            <p class="ws-line">fnbo — tech intern <span class="ws-dim">'26</span></p>
+            <p class="ws-line">lanl × uno — swe intern <span class="ws-dim">'25</span></p>
+            <p class="ws-line">uno cba — lead it consultant <span class="ws-dim">'25–</span></p>
+            <p class="ws-line">uno is&amp;t — grader <span class="ws-dim">'25–</span></p>
+            <p class="ws-line">uno — cybersec research <span class="ws-dim">'22</span></p>
         </section>
 
-    </div>
+        <section class="vstack">
+            <h2 class="ws-title">skills</h2>
+            <p class="ws-line">python · js · html/css</p>
+            <p class="ws-line">react · firebase · supabase</p>
+            <p class="ws-line">postgres · mysql · git · figma</p>
+        </section>
 
-    <script src="scripts.js"></script>
-    <script src="https://kit.fontawesome.com/b2da1b9648.js" crossorigin="anonymous"></script>
+        <section class="vstack">
+            <h2 class="ws-title">projects</h2>
+            <a class="ws-line" href="https://github.com/njiedev/b4pdatabase" target="_blank">b4p inventory →</a>
+            <p class="ws-dim ws-line">react · ts · supabase</p>
+            <a class="ws-line" href="https://nbadle.net" target="_blank">nbadle →</a>
+            <p class="ws-dim ws-line">react · ts </p>
+        </section>
+    </main>
+    <script>
+        const btn = document.getElementById('invertToggle');
+        btn.addEventListener('click', () => {
+            document.body.classList.toggle('inverted');
+        });
+    </script>
 </body>
 </html>
