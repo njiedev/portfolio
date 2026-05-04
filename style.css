@@ -674,11 +674,30 @@ body {
     margin: 0;
     line-height: 1.45;
 }
+.ws-line2 {
+    font-size: 0.82rem;
+    color: #c8c8c8;
+    text-decoration: none;
+    transition: color 0.15s ease;
+    margin: 0;
+    line-height: 1.45;
+}
+
+.ws-summary {
+    max-width: 260px;
+    margin: 0 0 4px;
+    color: #d8d8d8;
+    font-size: 0.82rem;
+    line-height: 1.45;
+    text-transform: lowercase;
+}
 
 a.ws-line:hover {
     color: #fff;
 }
-
+a.ws-line2:hover {
+    color: #fff;
+}
 .ws-dim {
     color: #777;
 }
@@ -732,6 +751,13 @@ a.ws-line:hover {
 
 .wallpaper-page.inverted .ws-line {
     color: #333;
+}
+.wallpaper-page.inverted .ws-line2 {
+    color: #333;
+}
+
+.wallpaper-page.inverted .ws-summary {
+    color: #222;
 }
 
 .wallpaper-page.inverted a.ws-line:hover {
@@ -817,4 +843,3 @@ a.ws-line:hover {
     white-space: pre-wrap;
     word-break: break-word;
 }
-
