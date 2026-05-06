@@ -630,10 +630,21 @@ body {
     background-size: cover;
     color: #f5f5f5;
     font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    animation: wallpaperBreath 32s ease-in-out infinite alternate;
+}
+
+.wallpaper-page::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background: rgba(0, 0, 0, 0.16);
 }
 
 .wallpaper-rail {
     position: absolute;
+    z-index: 1;
     top: 5vh;
     left: 4vw;
     right: 4vw;
@@ -644,6 +655,7 @@ body {
     align-items: flex-start;
     gap: 32px;
     letter-spacing: 0.02em;
+    animation: railReveal 700ms ease-out both;
 }
 
 .vstack {
@@ -653,6 +665,31 @@ body {
     gap: 4px;
     min-width: 0;
     flex: 0 1 auto;
+    animation: stackReveal 520ms ease-out both;
+}
+
+.vstack:nth-child(1) {
+    animation-delay: 60ms;
+}
+
+.vstack:nth-child(2) {
+    animation-delay: 110ms;
+}
+
+.vstack:nth-child(3) {
+    animation-delay: 160ms;
+}
+
+.vstack:nth-child(4) {
+    animation-delay: 210ms;
+}
+
+.vstack:nth-child(5) {
+    animation-delay: 260ms;
+}
+
+.vstack:nth-child(6) {
+    animation-delay: 310ms;
 }
 
 .ws-title {
@@ -663,6 +700,8 @@ body {
     margin-bottom: 6px;
     opacity: 0.95;
     letter-spacing: 0.04em;
+    text-shadow: 0 1px 14px rgba(0, 0, 0, 0.45);
+    transition: color 0.18s ease, opacity 0.18s ease;
 }
 
 .ws-line {
@@ -670,17 +709,19 @@ body {
     color: #c8c8c8;
     text-decoration: none;
     text-transform: lowercase;
-    transition: color 0.15s ease;
+    transition: color 0.18s ease, opacity 0.18s ease, transform 0.18s ease;
     margin: 0;
     line-height: 1.45;
+    text-shadow: 0 1px 12px rgba(0, 0, 0, 0.5);
 }
 .ws-line2 {
     font-size: 0.82rem;
     color: #c8c8c8;
     text-decoration: none;
-    transition: color 0.15s ease;
+    transition: color 0.18s ease, opacity 0.18s ease, transform 0.18s ease;
     margin: 0;
     line-height: 1.45;
+    text-shadow: 0 1px 12px rgba(0, 0, 0, 0.5);
 }
 
 .ws-summary {
@@ -694,12 +735,36 @@ body {
 
 a.ws-line:hover {
     color: #fff;
+    transform: translateX(3px);
 }
 a.ws-line2:hover {
     color: #fff;
+    transform: translateX(3px);
+}
+
+a.ws-line:focus-visible,
+a.ws-line2:focus-visible,
+.invert-toggle:focus-visible {
+    outline: 1px solid currentColor;
+    outline-offset: 3px;
+}
+
+.vstack:hover .ws-title {
+    opacity: 1;
+}
+
+.vstack:hover .ws-line:not(:hover),
+.vstack:hover .ws-line2:not(:hover) {
+    opacity: 0.72;
 }
 .ws-dim {
     color: #777;
+    transition: color 0.18s ease;
+}
+
+a.ws-line,
+a.ws-line2 {
+    display: inline-block;
 }
 
 .invert-toggle {
@@ -716,16 +781,26 @@ a.ws-line2:hover {
     letter-spacing: 0.06em;
     cursor: pointer;
     font-family: inherit;
-    transition: color 0.15s ease, border-color 0.15s ease;
+    transition: color 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
+    animation: invertReveal 620ms ease-out 380ms both;
 }
 
 .invert-toggle:hover {
     color: #fff;
     border-color: #fff;
+    transform: translateY(-1px);
+}
+
+.invert-toggle:active {
+    transform: translateY(0);
 }
 
 .wallpaper-page.inverted {
     background-color: #fff;
+}
+
+.wallpaper-page.inverted::after {
+    background: rgba(255, 255, 255, 0.2);
 }
 
 .wallpaper-page.inverted::before {
@@ -747,13 +822,16 @@ a.ws-line2:hover {
 
 .wallpaper-page.inverted .ws-title {
     color: #000;
+    text-shadow: 0 1px 14px rgba(255, 255, 255, 0.52);
 }
 
 .wallpaper-page.inverted .ws-line {
     color: #333;
+    text-shadow: 0 1px 12px rgba(255, 255, 255, 0.6);
 }
 .wallpaper-page.inverted .ws-line2 {
     color: #333;
+    text-shadow: 0 1px 12px rgba(255, 255, 255, 0.6);
 }
 
 .wallpaper-page.inverted .ws-summary {
@@ -778,7 +856,83 @@ a.ws-line2:hover {
     border-color: #000;
 }
 
+@keyframes wallpaperBreath {
+    from {
+        background-position: 50% 50%;
+    }
+
+    to {
+        background-position: 50.8% 49.2%;
+    }
+}
+
+@keyframes railReveal {
+    from {
+        opacity: 0.7;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes stackReveal {
+    from {
+        opacity: 0.45;
+        transform: translateY(4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes invertReveal {
+    from {
+        opacity: 0;
+        transform: translateY(4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .wallpaper-page,
+    .wallpaper-rail,
+    .vstack,
+    .invert-toggle {
+        animation: none;
+    }
+
+    .ws-title,
+    .ws-line,
+    .ws-line2,
+    .ws-dim,
+    .invert-toggle {
+        transition: none;
+    }
+
+    a.ws-line:hover,
+    a.ws-line2:hover,
+    .invert-toggle:hover,
+    .invert-toggle:active {
+        transform: none;
+    }
+}
+
 @media (max-width: 700px) {
+    .wallpaper-page::after {
+        background: rgba(0, 0, 0, 0.34);
+    }
+
+    .wallpaper-page.inverted::after {
+        background: rgba(255, 255, 255, 0.38);
+    }
+
     .wallpaper-rail {
         flex-direction: column;
         gap: 22px;
