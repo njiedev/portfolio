@@ -79,6 +79,64 @@ body {
     overflow-x: hidden;
 }
 
+.video-page {
+    background: #000;
+}
+
+.video-page::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background: rgba(0, 0, 0, 0.42);
+}
+
+.video-page > *:not(.wallpaper-video) {
+    z-index: 1;
+}
+
+.future-shell {
+    position: relative;
+}
+
+.video-page .container {
+    color: #fff;
+    text-shadow:
+        0 1px 0 #000,
+        0 0 12px #000,
+        0 0 24px #000;
+}
+
+.video-page .page-header h1,
+.video-page .reading-item h3,
+.video-page .blog-post h3 {
+    color: #fff;
+}
+
+.video-page .page-header p,
+.video-page .reading-author,
+.video-page .blog-date,
+.video-page .blog-post p,
+.video-page .empty-state,
+.video-page .back-link {
+    color: #fff;
+}
+
+.video-page .reading-item,
+.video-page .blog-post {
+    border-bottom-color: rgba(255, 255, 255, 0.38);
+}
+
+.video-page .tag {
+    border-color: #fff;
+    color: #fff;
+}
+
+.video-page .project-link {
+    color: #fff;
+}
+
 #particles {
     position: fixed;
     top: 0;
@@ -626,20 +684,25 @@ body {
 .wallpaper-page {
     margin: 0;
     min-height: 100vh;
-    background: #000 url('thumb-1920-666341.jpg') no-repeat center center fixed;
-    background-size: cover;
     color: #f5f5f5;
     font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
-    animation: wallpaperBreath 32s ease-in-out infinite alternate;
+}
+
+.wallpaper-video {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    object-position: center center;
+    transform: scale(1.12);
+    transform-origin: center center;
+    z-index: 0;
+    pointer-events: none;
 }
 
 .wallpaper-page::after {
-    content: "";
-    position: fixed;
-    inset: 0;
-    z-index: 0;
-    pointer-events: none;
-    background: rgba(0, 0, 0, 0.16);
+    background: rgba(0, 0, 0, 0.36);
 }
 
 .wallpaper-rail {
@@ -694,43 +757,56 @@ body {
 
 .ws-title {
     font-size: 1rem;
-    font-weight: 500;
+    font-weight: 700;
     text-transform: lowercase;
     color: #fff;
     margin-bottom: 6px;
-    opacity: 0.95;
+    opacity: 1;
     letter-spacing: 0.04em;
-    text-shadow: 0 1px 14px rgba(0, 0, 0, 0.45);
+    text-shadow:
+        0 1px 0 #000,
+        0 0 12px #000,
+        0 0 24px #000;
     transition: color 0.18s ease, opacity 0.18s ease;
 }
 
 .ws-line {
     font-size: 0.82rem;
-    color: #c8c8c8;
+    color: #fff;
     text-decoration: none;
     text-transform: lowercase;
     transition: color 0.18s ease, opacity 0.18s ease, transform 0.18s ease;
     margin: 0;
     line-height: 1.45;
-    text-shadow: 0 1px 12px rgba(0, 0, 0, 0.5);
+    text-shadow:
+        0 1px 0 #000,
+        0 0 10px #000,
+        0 0 20px #000;
 }
 .ws-line2 {
     font-size: 0.82rem;
-    color: #c8c8c8;
+    color: #fff;
     text-decoration: none;
     transition: color 0.18s ease, opacity 0.18s ease, transform 0.18s ease;
     margin: 0;
     line-height: 1.45;
-    text-shadow: 0 1px 12px rgba(0, 0, 0, 0.5);
+    text-shadow:
+        0 1px 0 #000,
+        0 0 10px #000,
+        0 0 20px #000;
 }
 
 .ws-summary {
     max-width: 260px;
     margin: 0 0 4px;
-    color: #d8d8d8;
+    color: #fff;
     font-size: 0.82rem;
     line-height: 1.45;
     text-transform: lowercase;
+    text-shadow:
+        0 1px 0 #000,
+        0 0 10px #000,
+        0 0 20px #000;
 }
 
 a.ws-line:hover {
@@ -758,7 +834,7 @@ a.ws-line2:focus-visible,
     opacity: 0.72;
 }
 .ws-dim {
-    color: #777;
+    color: #fff;
     transition: color 0.18s ease;
 }
 
@@ -773,8 +849,8 @@ a.ws-line2 {
     right: 24px;
     z-index: 10;
     background: transparent;
-    border: 1px solid #888;
-    color: #c8c8c8;
+    border: 1px solid #fff;
+    color: #fff;
     padding: 6px 12px;
     font-size: 0.75rem;
     text-transform: lowercase;
@@ -783,6 +859,9 @@ a.ws-line2 {
     font-family: inherit;
     transition: color 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
     animation: invertReveal 620ms ease-out 380ms both;
+    text-shadow:
+        0 1px 0 #000,
+        0 0 10px #000;
 }
 
 .invert-toggle:hover {
@@ -800,42 +879,42 @@ a.ws-line2 {
 }
 
 .wallpaper-page.inverted::after {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.42);
 }
 
-.wallpaper-page.inverted::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background: inherit;
-    background-image: url('thumb-1920-666341.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+.wallpaper-page.inverted .wallpaper-video {
     filter: invert(1);
-    z-index: -1;
-}
-
-.wallpaper-page.inverted {
-    background-image: none;
 }
 
 .wallpaper-page.inverted .ws-title {
     color: #000;
-    text-shadow: 0 1px 14px rgba(255, 255, 255, 0.52);
+    text-shadow:
+        0 1px 0 #fff,
+        0 0 12px #fff,
+        0 0 24px #fff;
 }
 
 .wallpaper-page.inverted .ws-line {
-    color: #333;
-    text-shadow: 0 1px 12px rgba(255, 255, 255, 0.6);
+    color: #000;
+    text-shadow:
+        0 1px 0 #fff,
+        0 0 10px #fff,
+        0 0 20px #fff;
 }
 .wallpaper-page.inverted .ws-line2 {
-    color: #333;
-    text-shadow: 0 1px 12px rgba(255, 255, 255, 0.6);
+    color: #000;
+    text-shadow:
+        0 1px 0 #fff,
+        0 0 10px #fff,
+        0 0 20px #fff;
 }
 
 .wallpaper-page.inverted .ws-summary {
-    color: #222;
+    color: #000;
+    text-shadow:
+        0 1px 0 #fff,
+        0 0 10px #fff,
+        0 0 20px #fff;
 }
 
 .wallpaper-page.inverted a.ws-line:hover {
@@ -843,12 +922,15 @@ a.ws-line2 {
 }
 
 .wallpaper-page.inverted .ws-dim {
-    color: #888;
+    color: #000;
 }
 
 .wallpaper-page.inverted .invert-toggle {
-    border-color: #555;
-    color: #333;
+    border-color: #000;
+    color: #000;
+    text-shadow:
+        0 1px 0 #fff,
+        0 0 10px #fff;
 }
 
 .wallpaper-page.inverted .invert-toggle:hover {
@@ -925,6 +1007,11 @@ a.ws-line2 {
 }
 
 @media (max-width: 700px) {
+    .wallpaper-video {
+        height: 110vh;
+        transform: scale(1.32);
+    }
+
     .wallpaper-page::after {
         background: rgba(0, 0, 0, 0.34);
     }
@@ -943,9 +1030,6 @@ a.ws-line2 {
 .future-page {
     margin: 0;
     min-height: 100vh;
-    background:
-        linear-gradient(rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.08)),
-        url('images/one-piece-pictures-oxwg4feyxj2pggx9.jpg') center / cover fixed;
     color: #222;
     font-family: Georgia, "Times New Roman", serif;
 }
@@ -1312,10 +1396,6 @@ a.ws-line2 {
 }
 
 @media (max-width: 760px) {
-    .future-page {
-        background-attachment: scroll;
-    }
-
     .future-shell {
         padding: 16px;
     }
