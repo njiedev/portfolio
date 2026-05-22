@@ -304,6 +304,13 @@ body {
     line-height: 1.08;
 }
 
+.name-tag {
+    color: var(--portfolio-muted);
+    font-size: 0.45em;
+    font-weight: 500;
+    vertical-align: middle;
+}
+
 .profile-copy p {
     color: var(--portfolio-muted);
     font-size: 0.96rem;
