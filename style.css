@@ -770,6 +770,16 @@ body {
     font-weight: 500;
 }
 
+/* color the project name text itself by status */
+.future-page .project-links > .project-row.is-pending > span:first-child {
+    color: #dc2626;
+}
+
+.future-page .project-links > a.is-achieved > span:first-child,
+.future-page .project-links > .project-row.is-achieved > span:first-child {
+    color: #16a34a;
+}
+
 .future-page .project-links > .project-row small {
     color: var(--portfolio-muted);
     font-size: 0.86rem;
