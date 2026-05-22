@@ -3,74 +3,355 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohammed Njie</title>
+    <title>mohammed njie</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-<body class="wallpaper-page video-page">
-    <video class="wallpaper-video" autoplay loop muted playsinline aria-hidden="true">
-        <source src="guts-background.mp4" type="video/mp4">
-    </video>
-    <button id="invertToggle" class="invert-toggle" aria-label="invert colors">invert</button>
-    <main class="wallpaper-rail">
+<body class="portfolio-page">
+    <canvas class="leaf-particles" id="leafParticles" aria-hidden="true"></canvas>
+    <button class="portfolio-theme-toggle" id="portfolioThemeToggle" type="button" aria-label="switch to dark mode">
+        <i class="fa-regular fa-moon" aria-hidden="true"></i>
+    </button>
+    <main class="portfolio-shell">
+        <header class="profile-card">
+            <span class="profile-photo-swap" tabindex="0" aria-label="mohammed njie profile photo">
+                <img class="profile-photo profile-photo-mii" src="images/mee-headshot.png" alt="mohammed njie avatar">
+                <img class="profile-photo profile-photo-hover" src="images/profile-hover.jpg" alt="">
+            </span>
+            <div class="profile-copy">
+                <div class="profile-heading">
+                    <h1>mohammed njie</h1>
+                    <nav class="social-strip" aria-label="Social links">
+                        <a href="https://github.com/njiedev" target="_blank" rel="noreferrer" aria-label="GitHub">
+                            <i class="fa-brands fa-github" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/mohammed-njie-619795326/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://x.com/3weeksbuilding" target="_blank" rel="noreferrer" aria-label="X">
+                            <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@3weeksbuilding" target="_blank" rel="noreferrer" aria-label="YouTube">
+                            <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+                        </a>
+                        <a href="images/resumes/b4presume.pdf" target="_blank" aria-label="Resume">
+                            <i class="fa-regular fa-file-lines" aria-hidden="true"></i>
+                        </a>
+                    </nav>
+                </div>
+                <div class="profile-meta">
+                    <p>19 / computer science &amp; ai major - exp 2028</p>
+                    <nav class="header-links" aria-label="Personal links">
+                        <a href="blog.html">blog</a>
+                        <a href="reading-list.html">reading list</a>
+                    </nav>
+                </div>
+            </div>
+        </header>
 
-        <section class="vstack">
-            <h2 class="ws-title">me</h2>
-            <p class="ws-line">uno '28 — cs &amp; ai</p>
-            <a class="ws-line" href="https://github.com/njiedev" target="_blank">github</a>
-            <a class="ws-line" href="https://www.linkedin.com/in/mohammed-njie-619795326/" target="_blank">linkedin</a>
-            <a class="ws-line" href="https://x.com/3weeksbuilding" target="_blank">twitter</a>
-            <a class="ws-line" href="images/resumes/b4presume.pdf" target="_blank">resume</a>
-            <a class="ws-line" href="https://www.youtube.com/@3weeksbuilding" target="_blank">youtube</a>
-        </section>
+        <details class="portfolio-section portfolio-group" open>
+            <summary id="work-title">work experience</summary>
+            <div class="details-panel">
+                <div class="experience-list">
+                <details class="work-item">
+                    <summary>
+                        <img src="images/fnbo_logo.jpeg" alt="FNBO logo">
+                        <span class="work-heading">
+                            <strong>technology intern</strong>
+                            <small>fnbo / incoming summer 2026</small>
+                        </span>
+                    </summary>
+                    <div class="details-panel">
+                        <p>incoming technology internship focused on software, internal tools, and engineering workflows.</p>
+                    </div>
+                </details>
 
-        <section class="vstack">
-            <h2 class="ws-title">more</h2>
-            <a class="ws-line" href="blog.html">blog</a>
-            <a class="ws-line" href="reading-list.html">reading list</a>
-        </section>
+                <details class="work-item">
+                    <summary>
+                        <img src="images/b4p_logo.jpeg" alt="Blueprints for Pangaea logo">
+                        <span class="work-heading">
+                            <strong>chief technology officer</strong>
+                            <small>blueprints for pangaea omaha / 2025 - present</small>
+                        </span>
+                    </summary>
+                    <div class="details-panel">
+                        <p>leading the chapter's technology work and building systems that support inventory and operations.</p>
+                    </div>
+                </details>
 
-        <section class="vstack">
-            <h2 class="ws-title">about</h2>
-            <p class="ws-line">building things</p>
-            <p class="ws-line">lifelong learner</p>
-            <p class="ws-line">lifting</p>
-            <p class="ws-line">reading fiction</p>
-            <p class="ws-line">basketball</p>
-            <p class="ws-line">travel</p>
-        </section>
+                <details class="work-item">
+                    <summary>
+                        <img src="images/lanl.jpeg" alt="LANL logo">
+                        <span class="work-heading">
+                            <strong>software engineering intern</strong>
+                            <small>lanl x uno / 2025</small>
+                        </span>
+                    </summary>
+                    <div class="details-panel">
+                        <p>built software in a research environment while collaborating with university and laboratory teams.</p>
+                    </div>
+                </details>
 
-        <section class="vstack">
-            <h2 class="ws-title">experience</h2>
-            <p class="ws-line">fnbo — tech intern <span class="ws-dim">incoming sum '26</span></p>
-            <p class="ws-line">cheif technology officer - blueprints for pangaea omaha <span class="ws-dim">'25–</span></p>
-            <p class="ws-line">lanl × uno — swe intern <span class="ws-dim">'25</span></p>
-            <p class="ws-line">uno cba — lead it consultant <span class="ws-dim">'25–</span></p>
-            <p class="ws-line">uno is&amp;t — grader <span class="ws-dim">'25–</span></p>
-            <p class="ws-line">uno — cybersec research <span class="ws-dim">'22</span></p>
-        </section>
+                <details class="work-item">
+                    <summary>
+                        <img src="images/unomaha_logo.jpeg" alt="UNO logo">
+                        <span class="work-heading">
+                            <strong>lead it consultant</strong>
+                            <small>uno college of business administration / 2025 - present</small>
+                        </span>
+                    </summary>
+                    <div class="details-panel">
+                        <p>supports students, faculty, and staff while leading troubleshooting and day-to-day it operations.</p>
+                    </div>
+                </details>
 
-        <section class="vstack">
-            <h2 class="ws-title">projects</h2>
-            <a class="ws-line" href="https://github.com/njiedev/b4pdatabase" target="_blank">b4p inventory →</a>
-            <p class="ws-dim ws-line">inventory tracking for blueprints for pangaea · react · ts · supabase</p>
-            <a class="ws-line" href="https://nbadle.net" target="_blank">nbadle →</a>
-            <p class="ws-dim ws-line">nba wordle-style guessing game · react · ts</p>
-            <a class="ws-line2" href="https://github.com/njiedev/PEAK" target="_blank">PEAK →</a>
-            <p class="ws-dim ws-line">performance + learning tracker · react · ts</p>
-        </section>
+                <details class="work-item">
+                    <summary>
+                        <img src="images/unomaha_logo.jpeg" alt="UNO logo">
+                        <span class="work-heading">
+                            <strong>grader</strong>
+                            <small>uno information science &amp; technology / 2025 - present</small>
+                        </span>
+                    </summary>
+                    <div class="details-panel">
+                        <p>grades coursework and supports feedback for computing classes.</p>
+                    </div>
+                </details>
 
-        <section class="vstack">
-            <h2 class="ws-title">skills</h2>
-            <p class="ws-line">python · js · html/css</p>
-            <p class="ws-line">react · firebase · supabase</p>
-            <p class="ws-line">postgres · mysql · git · figma</p>
-        </section>
+                <details class="work-item">
+                    <summary>
+                        <img src="images/unomaha_logo.jpeg" alt="UNO logo">
+                        <span class="work-heading">
+                            <strong>cybersecurity research</strong>
+                            <small>uno / 2022</small>
+                        </span>
+                    </summary>
+                    <div class="details-panel">
+                        <p>explored security concepts and technical investigation through early research work.</p>
+                    </div>
+                </details>
+                </div>
+            </div>
+        </details>
+
+        <details class="portfolio-section portfolio-group" open>
+            <summary id="projects-title">projects</summary>
+            <div class="details-panel">
+                <div class="project-links">
+                    <a href="https://github.com/njiedev/b4pdatabase" target="_blank" rel="noreferrer">
+                        <span>b4p inventory</span>
+                        <small>react, typescript, supabase</small>
+                    </a>
+                    <a href="https://nbadle.net" target="_blank" rel="noreferrer">
+                        <span>nbadle</span>
+                        <small>nba guessing game</small>
+                    </a>
+                    <a href="https://github.com/njiedev/PEAK" target="_blank" rel="noreferrer">
+                        <span>peak</span>
+                        <small>performance and learning tracker</small>
+                    </a>
+                </div>
+            </div>
+        </details>
+
+        <details class="portfolio-section portfolio-group" open>
+            <summary id="misc-title">misc</summary>
+            <div class="details-panel">
+                <ul class="misc-list">
+                    <li>
+                        <a href="https://tactics.tools/player/na/comfybox/web" target="_blank" rel="noreferrer">
+                            peak masters in tft / top 1.4% of 1m+ worldwide players
+                        </a>
+                        
+                    </li>
+                    <li>
+                        <a href="https://www.credly.com/badges/f00910c8-de3e-4919-ab0a-d9d19777b19a" target="_blank" rel="noreferrer">
+                            NVIDIA certified associate - generative AI and LLMs
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </details>
+
     </main>
     <script>
-        const btn = document.getElementById('invertToggle');
-        btn.addEventListener('click', () => {
-            document.body.classList.toggle('inverted');
+        const portfolioThemeKey = 'portfolio-theme';
+        const portfolioThemeToggle = document.getElementById('portfolioThemeToggle');
+        const savedPortfolioTheme = localStorage.getItem(portfolioThemeKey);
+        const preferredPortfolioTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+
+        function setPortfolioTheme(theme) {
+            const nextTheme = theme === 'dark' ? 'light' : 'dark';
+            document.body.dataset.portfolioTheme = theme;
+            portfolioThemeToggle.setAttribute('aria-label', `switch to ${nextTheme} mode`);
+            portfolioThemeToggle.innerHTML = theme === 'dark'
+                ? '<i class="fa-regular fa-sun" aria-hidden="true"></i>'
+                : '<i class="fa-regular fa-moon" aria-hidden="true"></i>';
+        }
+
+        setPortfolioTheme(savedPortfolioTheme === 'dark' || savedPortfolioTheme === 'light'
+            ? savedPortfolioTheme
+            : preferredPortfolioTheme);
+
+        portfolioThemeToggle.addEventListener('click', () => {
+            const nextTheme = document.body.dataset.portfolioTheme === 'dark' ? 'light' : 'dark';
+            localStorage.setItem(portfolioThemeKey, nextTheme);
+            setPortfolioTheme(nextTheme);
         });
+
+        const reduceDisclosureMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+        function getDetailsPanel(details) {
+            return details.querySelector(':scope > .details-panel');
+        }
+
+        function animateDetails(details, shouldOpen) {
+            const panel = getDetailsPanel(details);
+            if (!panel || reduceDisclosureMotion.matches) {
+                details.open = shouldOpen;
+                return;
+            }
+
+            if (panel.getAnimations) {
+                panel.getAnimations().forEach(animation => animation.cancel());
+            }
+
+            if (shouldOpen) {
+                details.open = true;
+                const expandedHeight = panel.scrollHeight;
+                panel.classList.add('is-animating');
+                const animation = panel.animate([
+                    { height: '0px', opacity: 0, transform: 'translateY(-6px)' },
+                    { height: `${expandedHeight}px`, opacity: 1, transform: 'translateY(0)' }
+                ], {
+                    duration: 230,
+                    easing: 'cubic-bezier(.2,.8,.2,1)'
+                });
+                animation.onfinish = () => {
+                    panel.classList.remove('is-animating');
+                };
+                return;
+            }
+
+            const currentHeight = panel.scrollHeight;
+            panel.classList.add('is-animating');
+            const animation = panel.animate([
+                { height: `${currentHeight}px`, opacity: 1, transform: 'translateY(0)' },
+                { height: '0px', opacity: 0, transform: 'translateY(-6px)' }
+            ], {
+                duration: 190,
+                easing: 'cubic-bezier(.4,0,.2,1)'
+            });
+            animation.onfinish = () => {
+                details.open = false;
+                panel.classList.remove('is-animating');
+            };
+        }
+
+        document.querySelectorAll('.portfolio-group, .work-item').forEach(details => {
+            const summary = details.querySelector(':scope > summary');
+            summary.addEventListener('click', event => {
+                event.preventDefault();
+                animateDetails(details, !details.open);
+            });
+        });
+
+        const leafCanvas = document.getElementById('leafParticles');
+        const leafCtx = leafCanvas.getContext('2d');
+        const reduceLeafMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+        const petalImg = new Image();
+        let petalArray = [];
+        let leafFrame = null;
+        let mouseX = 0;
+
+        function getPetalCount() {
+            return window.innerWidth < 640 ? 10 : 18;
+        }
+
+        function resizeLeafCanvas() {
+            leafCanvas.width = window.innerWidth;
+            leafCanvas.height = window.innerHeight;
+            leafCanvas.style.width = `${window.innerWidth}px`;
+            leafCanvas.style.height = `${window.innerHeight}px`;
+        }
+
+        class Petal {
+            constructor() {
+                this.reset();
+            }
+
+            reset() {
+                this.x = Math.random() * leafCanvas.width;
+                this.y = Math.random() * leafCanvas.height * 2 - leafCanvas.height;
+                this.w = 15 + Math.random() * 15;
+                this.h = 20 + Math.random() * 10;
+                this.opacity = this.w / 40;
+                this.flip = Math.random();
+                this.xSpeed = 1.5 + Math.random() * 2;
+                this.ySpeed = 1 + Math.random();
+                this.flipSpeed = Math.random() * 0.03;
+            }
+
+            draw() {
+                if (this.y > leafCanvas.height || this.x > leafCanvas.width) {
+                    this.reset();
+                }
+                leafCtx.globalAlpha = this.opacity;
+                leafCtx.drawImage(
+                    petalImg,
+                    this.x,
+                    this.y,
+                    this.w * (0.6 + Math.abs(Math.cos(this.flip)) / 3),
+                    this.h * (0.8 + Math.abs(Math.sin(this.flip)) / 5)
+                );
+            }
+
+            animate() {
+                this.x += this.xSpeed + mouseX * 5;
+                this.y += this.ySpeed + mouseX * 2;
+                this.flip += this.flipSpeed;
+                this.draw();
+            }
+        }
+
+        function drawPetals(move = true) {
+            leafCtx.clearRect(0, 0, leafCanvas.width, leafCanvas.height);
+            leafCtx.filter = document.body.dataset.portfolioTheme === 'dark' ? 'invert(1)' : 'none';
+            petalArray.forEach(petal => move ? petal.animate() : petal.draw());
+            leafCtx.filter = 'none';
+        }
+
+        function animateLeaves() {
+            drawPetals();
+            leafFrame = requestAnimationFrame(animateLeaves);
+        }
+
+        function setLeafMotion() {
+            if (leafFrame) cancelAnimationFrame(leafFrame);
+            leafFrame = null;
+            drawPetals(false);
+            if (!reduceLeafMotion.matches) animateLeaves();
+        }
+
+        petalImg.onload = () => {
+            resizeLeafCanvas();
+            petalArray = Array.from({ length: getPetalCount() }, () => new Petal());
+            setLeafMotion();
+        };
+        petalImg.src = 'images/leaf-petal.svg';
+
+        window.addEventListener('resize', () => {
+            resizeLeafCanvas();
+            petalArray = Array.from({ length: getPetalCount() }, () => new Petal());
+            setLeafMotion();
+        });
+        window.addEventListener('mousemove', event => {
+            mouseX = (event.clientX / Math.max(window.innerWidth, 1) - 0.5) * 0.22;
+        });
+        window.addEventListener('mouseleave', () => {
+            mouseX = 0;
+        });
+        reduceLeafMotion.addEventListener('change', setLeafMotion);
     </script>
 </body>
 </html>

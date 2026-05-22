@@ -3,21 +3,22 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reading List - Mohammed Njie</title>
+    <title>reading list - mohammed njie</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-<body class="video-page">
-    <video class="wallpaper-video" autoplay loop muted playsinline aria-hidden="true">
-        <source src="guts-background.mp4" type="video/mp4">
-    </video>
-    <div class="container">
+<body class="portfolio-subpage">
+    <button class="portfolio-theme-toggle" id="portfolioThemeToggle" type="button" aria-label="switch to dark mode">
+        <i class="fa-regular fa-moon" aria-hidden="true"></i>
+    </button>
+    <main class="subpage-shell">
 
-        <a href="index.html" class="back-link">&larr; back</a>
+        <a href="index.html" class="subpage-back">&larr; home</a>
 
-        <div class="page-header">
+        <header class="subpage-header">
             <h1>reading list</h1>
-            <p>books and articles I've been reading.</p>
-        </div>
+            <p>books and articles i've been reading.</p>
+        </header>
 
         <div class="reading-item">
             <div class="reading-header">
@@ -122,9 +123,8 @@
                 <a href="https://lelouch.dev/blog/building-a-roadmap/" target="_blank" class="project-link">read article →</a>
             </div>
         </div>
-    </div>
+    </main>
 
-    <script src="scripts.js"></script>
-    <script src="https://kit.fontawesome.com/b2da1b9648.js" crossorigin="anonymous"></script>
+    <script src="portfolio-theme.js"></script>
 </body>
 </html>
