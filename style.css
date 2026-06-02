@@ -531,7 +531,8 @@ body {
     border-top: 1px solid var(--portfolio-line);
 }
 
-.project-links a {
+.project-links a,
+.project-links > .project-row {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
@@ -543,7 +544,9 @@ body {
     transition: padding-left 160ms ease;
 }
 
-.project-links a:hover {
+.project-links a:hover,
+.project-links > .project-row:hover,
+.project-links > .project-row:focus-visible {
     padding-left: 10px;
 }
 
