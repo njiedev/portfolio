@@ -370,7 +370,9 @@ body {
 .header-links a:focus-visible,
 .portfolio-group > summary:focus-visible,
 .work-item summary:focus-visible,
-.project-links a:focus-visible {
+.project-item summary:focus-visible,
+.project-links > a:focus-visible,
+.project-demo-link:focus-visible {
     outline: 2px solid var(--portfolio-ink);
     outline-offset: 3px;
 }
@@ -554,6 +556,12 @@ body {
     .details-panel {
         transition: none;
     }
+
+    .project-rank-gold > summary > span:first-child,
+    .project-rank-silver > summary > span:first-child {
+        animation: none;
+        background-position: 45% 50%;
+    }
 }
 
 .project-links {
@@ -561,7 +569,8 @@ body {
     border-top: 1px solid var(--portfolio-line);
 }
 
-.project-links a,
+.project-links > a,
+.project-item > summary,
 .project-links > .project-row {
     display: flex;
     justify-content: space-between;
@@ -574,7 +583,37 @@ body {
     transition: padding-left 160ms ease;
 }
 
-.project-links a:hover,
+.project-item > summary {
+    position: relative;
+    padding-right: 42px;
+    cursor: pointer;
+    list-style: none;
+}
+
+.project-item > summary::-webkit-details-marker {
+    display: none;
+}
+
+.project-item > summary::after {
+    content: "\2193";
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    width: 24px;
+    color: var(--portfolio-ink);
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1;
+    text-align: center;
+    transform: translateY(-50%);
+}
+
+.project-item[open] > summary::after {
+    content: "\2191";
+}
+
+.project-links > a:hover,
+.project-item > summary:hover,
 .project-links > .project-row:hover,
 .project-links > .project-row:focus-visible {
     padding-left: 10px;
@@ -585,10 +624,84 @@ body {
     font-weight: 500;
 }
 
+.project-rank-gold > summary > span:first-child,
+.project-rank-silver > summary > span:first-child {
+    background-size: 220% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: project-rank-shine 5.5s ease-in-out infinite;
+}
+
+.project-rank-gold > summary > span:first-child {
+    background-image: linear-gradient(105deg, #8a520c 0%, #c8841f 30%, #fff0a8 48%, #c8841f 62%, #7a4607 100%);
+}
+
+.project-rank-silver > summary > span:first-child {
+    background-image: linear-gradient(105deg, #4e5661 0%, #8b95a1 28%, #f6f8fb 48%, #9aa4b2 64%, #3f4650 100%);
+    font-weight: 600;
+}
+
+.portfolio-page[data-portfolio-theme="dark"] .project-rank-gold > summary > span:first-child {
+    background-image: linear-gradient(105deg, #b7791f 0%, #f2c15b 30%, #fff6bd 48%, #d99b28 64%, #9a5d12 100%);
+}
+
+.portfolio-page[data-portfolio-theme="dark"] .project-rank-silver > summary > span:first-child {
+    background-image: linear-gradient(105deg, #8a93a0 0%, #d2d8e1 28%, #ffffff 48%, #b1bac6 64%, #6f7885 100%);
+}
+
+@keyframes project-rank-shine {
+    0%,
+    46%,
+    100% {
+        background-position: 100% 50%;
+    }
+
+    58% {
+        background-position: 0% 50%;
+    }
+}
+
 .project-links small {
     color: var(--portfolio-muted);
     font-size: 0.86rem;
     text-align: right;
+}
+
+.project-demo {
+    display: grid;
+    gap: 12px;
+    padding: 0 42px 18px 0;
+}
+
+.project-demo p {
+    max-width: 560px;
+    color: var(--portfolio-body);
+    font-size: 0.92rem;
+    line-height: 1.6;
+}
+
+.project-demo video {
+    display: block;
+    width: 100%;
+    max-height: 380px;
+    border: 1px solid var(--portfolio-line);
+    border-radius: 8px;
+    background: #000;
+    object-fit: contain;
+}
+
+.project-demo-link {
+    justify-self: start;
+    color: var(--portfolio-muted);
+    font-size: 0.84rem;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+    transition: color 160ms ease;
+}
+
+.project-demo-link:hover {
+    color: var(--portfolio-ink);
 }
 
 .misc-list {
@@ -687,7 +800,8 @@ body {
         padding-right: 0;
     }
 
-    .project-links a {
+    .project-links > a,
+    .project-item > summary {
         align-items: flex-start;
         flex-direction: column;
         gap: 4px;
@@ -695,6 +809,10 @@ body {
 
     .project-links small {
         text-align: left;
+    }
+
+    .project-demo {
+        padding-right: 0;
     }
 
 }

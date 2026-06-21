@@ -68,12 +68,12 @@
                     <summary>
                         <img src="images/fnbo_logo.jpeg" alt="FNBO logo">
                         <span class="work-heading">
-                            <strong>technology intern</strong>
-                            <small>fnbo / incoming summer 2026</small>
+                            <strong>software engineering intern</strong>
+                            <small>fnbo / summer 2026</small>
                         </span>
                     </summary>
                     <div class="details-panel">
-                        <p>incoming technology internship focused on software, internal tools, and engineering workflows.</p>
+                        <p>technology internship focused on software, internal tools, and engineering workflows.</p>
                     </div>
                 </details>
 
@@ -152,6 +152,35 @@
             <summary id="projects-title">projects</summary>
             <div class="details-panel">
                 <div class="project-links">
+                    <details class="project-item project-rank-gold">
+                        <summary>
+                            <span>miituber</span>
+                            <small>tauri, three.js, mediapipe</small>
+                        </summary>
+                        <div class="details-panel">
+                            <div class="project-demo">
+                                <p>real-time mii avatar app with face tracking, a smooth obs clean view, and a local camera preview for demos.</p>
+                                <video controls preload="metadata" playsinline>
+                                    <source src="images/projects/miituber-demo.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </div>
+                    </details>
+                    <details class="project-item project-rank-silver">
+                        <summary>
+                            <span>3weeksbuilding.com</span>
+                            <small>go, sqlite, caddy, digitalocean</small>
+                        </summary>
+                        <div class="details-panel">
+                            <div class="project-demo">
+                                <p>personal media-dump site with server-rendered editing, sqlite-backed content, and vps deployment.</p>
+                                <video controls preload="metadata" playsinline>
+                                    <source src="images/projects/3weeksbuilding-demo.mp4" type="video/mp4">
+                                </video>
+                                <a class="project-demo-link" href="https://3weeksbuilding.com" target="_blank" rel="noreferrer">visit site</a>
+                            </div>
+                        </div>
+                    </details>
                     <a href="https://github.com/njiedev/b4pdatabase" target="_blank" rel="noreferrer">
                         <span>b4p inventory</span>
                         <small>react, typescript, supabase</small>
@@ -281,7 +310,7 @@
             };
         }
 
-        document.querySelectorAll('.portfolio-group, .work-item').forEach(details => {
+        document.querySelectorAll('.portfolio-group, .work-item, .project-item').forEach(details => {
             const summary = details.querySelector(':scope > summary');
             summary.addEventListener('click', event => {
                 event.preventDefault();
